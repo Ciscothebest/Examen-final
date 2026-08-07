@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPulse Sports - Centro de Control de Indicadores</title>
+    <meta name="description" content="Dashboard interactivo de indicadores clave de rendimiento para FitPulse Sports.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand-logo">
+                <div class="logo-icon"><i data-lucide="activity"></i></div>
+                <div class="logo-text">
+                    <h1>FitPulse</h1>
+                    <p class="subtitle">Centro de Control y Analítica de Negocio Deportivo</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <div class="live-badge">
+                    <span class="pulse-dot"></span>
+                    <span id="data-status">Cargando datos...</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-body">
+        <section class="filter-panel glass-card">
+            <div class="filter-header">
+                <i data-lucide="sliders"></i>
+                <h3>Filtros de Exploración de Datos</h3>
+            </div>
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="filter-sucursal"><i data-lucide="map-pin"></i> Sucursal en República Dominicana</label>
+                    <select id="filter-sucursal" class="custom-select">
+                        <option value="ALL">Todas las Sucursales (5)</option>
+                        <option value="Santo Domingo (Piantini)">Santo Domingo (Piantini)</option>
+                        <option value="Santiago (Los Jardines)">Santiago (Los Jardines)</option>
+                        <option value="Punta Cana (Bávaro)">Punta Cana (Bávaro)</option>
+                        <option value="Santo Domingo Este (Zona Oriental)">Santo Domingo Este (Zona Oriental)</option>
+                        <option value="Puerto Plata Club">Puerto Plata Club</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-categoria"><i data-lucide="shopping-bag"></i> Tipo de Servicio</label>
+                    <select id="filter-categoria" class="custom-select">
+                        <option value="ALL">Todos los Servicios</option>
+                        <option value="Membresías">Membresías Principales</option>
+                        <option value="Personal Trainer">Entrenador Personalizado</option>
+                        <option value="Clases Guiadas">Clases Grupales</option>
+                        <option value="Tienda Deportiva">Tienda y Suplementación</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-membresia"><i data-lucide="award"></i> Plan de Membresía</label>
+                    <select id="filter-membresia" class="custom-select">
+                        <option value="ALL">Todos los Planes</option>
+                        <option value="Básica">Plan Básico (RD$ 1,690/mes)</option>
+                        <option value="Premium">Plan Premium Black (RD$ 2,690/mes)</option>
+                        <option value="VIP">Plan VIP All-Access (RD$ 4,890/mes)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-periodo"><i data-lucide="calendar"></i> Período de Tiempo</label>
+                    <select id="filter-periodo" class="custom-select">
+                        <option value="2025" selected>Año 2025 Completo (12 Meses)</option>
+                        <option value="Q1-2025">Primer Trimestre 2025 (Q1: Ene - Mar)</option>
+                        <option value="Q2-2025">Segundo Trimestre 2025 (Q2: Abr - Jun)</option>
+                        <option value="Q3-2025">Tercer Trimestre 2025 (Q3: Jul - Sep)</option>
+                        <option value="Q4-2025">Cuarto Trimestre 2025 (Q4: Oct - Dic)</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions-group">
+                    <button id="btn-reset-filters" class="btn btn-outline">
+                        <i data-lucide="rotate-ccw"></i> Limpiar Filtros
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="kpi-grid">
+            <div class="kpi-card glass-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">Ingresos Recurrentes Mensuales</span>
+                </div>
+                <div class="kpi-value-block">
+                    <span id="kpi-mrr" class="kpi-value">RD$ 0</span>
+                    <span id="kpi-mrr-trend" class="kpi-subbadge positive"><i data-lucide="arrow-up-right"></i> Promedio Mensual</span>
+                </div>
+                <div class="kpi-footer">
+                    <span class="kpi-meta">Meta: RD$ 6,800,000 / mes</span>
+                    <div class="progress-bar-container"><div id="mrr-progress" class="progress-bar cyan-bar" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            <div class="kpi-card glass-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">Ingreso Promedio por Cliente</span>
+                </div>
+                <div class="kpi-value-block">
+                    <span id="kpi-arpu" class="kpi-value">RD$ 0</span>
+                    <span id="kpi-arpu-trend" class="kpi-subbadge positive"><i data-lucide="arrow-up-right"></i> Gasto Mensual / Socio</span>
+                </div>
+                <div class="kpi-footer">
+                    <span class="kpi-meta">Meta: > RD$ 2,850 / cliente</span>
+                    <div class="progress-bar-container"><div id="arpu-progress" class="progress-bar indigo-bar" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            <div class="kpi-card glass-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">Porcentaje de Cancelación</span>
+                </div>
+                <div class="kpi-value-block">
+                    <span id="kpi-churn" class="kpi-value">0%</span>
+                    <span id="kpi-churn-trend" class="kpi-subbadge positive"><i data-lucide="arrow-down-right"></i> Promedio Mensual</span>
+                </div>
+                <div class="kpi-footer">
+                    <span class="kpi-meta">Límite Deseable: &lt; 7% mensual</span>
+                    <div class="progress-bar-container"><div id="churn-progress" class="progress-bar rose-bar" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            <div class="kpi-card glass-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">Eficiencia en Captación</span>
+                </div>
+                <div class="kpi-value-block">
+                    <span id="kpi-ltvcac" class="kpi-value">0x</span>
+                    <span id="kpi-ltvcac-trend" class="kpi-subbadge positive"><i data-lucide="arrow-up-right"></i> Retorno de Inversión</span>
+                </div>
+                <div class="kpi-footer">
+                    <span class="kpi-meta">Rango de Salud: 3x - 4x</span>
+                    <div class="progress-bar-container"><div id="ltv-progress" class="progress-bar emerald-bar" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            <div class="kpi-card glass-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">Porcentaje de Ocupación</span>
+                </div>
+                <div class="kpi-value-block">
+                    <span id="kpi-ocupacion" class="kpi-value">0%</span>
+                    <span id="kpi-ocupacion-trend" class="kpi-subbadge positive"><i data-lucide="arrow-up-right"></i> Promedio Mensual</span>
+                </div>
+                <div class="kpi-footer">
+                    <span class="kpi-meta">Rango Óptimo: 70% - 82%</span>
+                    <div class="progress-bar-container"><div id="ocupacion-progress" class="progress-bar amber-bar" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            <div class="kpi-card glass-card">
+                <div class="kpi-header">
+                    <span class="kpi-title">Nivel de Satisfacción</span>
+                </div>
+                <div class="kpi-value-block">
+                    <span id="kpi-nps" class="kpi-value">8 / 10</span>
+                    <span id="kpi-nps-badge" class="kpi-subbadge purple-subbadge">Satisfacción: 80%</span>
+                </div>
+                <div class="kpi-footer">
+                    <span class="kpi-meta">Meta General: > 8 / 10</span>
+                    <div class="progress-bar-container"><div id="nps-progress" class="progress-bar purple-bar" style="width: 0%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="charts-grid">
+            <div class="chart-card glass-card span-2">
+                <div class="chart-header">
+                    <div>
+                        <h3>Facturación Mensual por Cuotas vs Porcentaje de Cancelaciones</h3>
+                    </div>
+                    <div class="chart-actions">
+                        <span class="badge cyan-badge" id="period-badge">Año 2025</span>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="chart-mrr-churn"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card glass-card span-1">
+                <div class="chart-header">
+                    <div>
+                        <h3>Ventas Totales por Tipo de Servicio (2025)</h3>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="chart-category"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card glass-card span-1">
+                <div class="chart-header">
+                    <div>
+                        <h3>Ganancia por Cliente en 10 Meses vs Inversión en Publicidad por Sucursal</h3>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="chart-ltv-cac"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card glass-card span-2">
+                <div class="chart-header">
+                    <div>
+                        <h3>Porcentaje de Ocupación de Instalaciones por Sucursal</h3>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="chart-occupation"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-explorer glass-card">
+            <div class="table-header">
+                <div>
+                    <h3>Registro de Operaciones de Clientes</h3>
+                    <p class="table-subtitle">Listado de transacciones (<span id="table-record-count">0</span> registros)</p>
+                </div>
+                <div class="table-controls">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="table-search" placeholder="Buscar por nombre, cédula, sucursal...">
+                    </div>
+                    <button id="btn-export-csv" class="btn btn-secondary">
+                        <i data-lucide="download"></i> Exportar a CSV
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>ID Recibo</th>
+                            <th>Fecha</th>
+                            <th>Nombre del Cliente</th>
+                            <th>Cédula DNI</th>
+                            <th>Sucursal</th>
+                            <th>Servicio</th>
+                            <th>Membresía</th>
+                            <th>Monto (RD$)</th>
+                            <th>Costo Captación (RD$)</th>
+                            <th>Estado</th>
+                            <th>Visitas/Mes</th>
+                            <th>Satisfacción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-pagination">
+                <span id="pagination-info">Mostrando página 1 de 1</span>
+                <div class="pagination-buttons">
+                    <button id="btn-prev-page" class="btn btn-icon"><i data-lucide="chevron-left"></i></button>
+                    <button id="btn-next-page" class="btn btn-icon"><i data-lucide="chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 FitPulse Sports — Sistema de Evaluación de Rendimiento Comercial</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

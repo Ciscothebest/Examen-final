@@ -1,0 +1,218 @@
+{
+  "periodoAno": 2025,
+  "totalRecords": 5604,
+  "totalIngresosGlobal": 12051024,
+  "monthlyKPIs": [
+    {
+      "mes": "2025-01",
+      "mrr": 142260,
+      "ingresoTotal": 186225,
+      "sociosActivos": 54,
+      "sociosCancelados": 0,
+      "churnRate": 0,
+      "arpu": 3448.61,
+      "avgAsistencias": 11,
+      "avgNps": 7.9
+    },
+    {
+      "mes": "2025-02",
+      "mrr": 294320,
+      "ingresoTotal": 366288,
+      "sociosActivos": 107,
+      "sociosCancelados": 1,
+      "churnRate": 0.9,
+      "arpu": 3423.25,
+      "avgAsistencias": 11,
+      "avgNps": 8.1
+    },
+    {
+      "mes": "2025-03",
+      "mrr": 436470,
+      "ingresoTotal": 577016,
+      "sociosActivos": 163,
+      "sociosCancelados": 0,
+      "churnRate": 0,
+      "arpu": 3539.98,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-04",
+      "mrr": 548920,
+      "ingresoTotal": 722848,
+      "sociosActivos": 208,
+      "sociosCancelados": 0,
+      "churnRate": 0,
+      "arpu": 3475.23,
+      "avgAsistencias": 11,
+      "avgNps": 7.9
+    },
+    {
+      "mes": "2025-05",
+      "mrr": 688160,
+      "ingresoTotal": 874596,
+      "sociosActivos": 262,
+      "sociosCancelados": 2,
+      "churnRate": 0.8,
+      "arpu": 3338.15,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-06",
+      "mrr": 801630,
+      "ingresoTotal": 1050203,
+      "sociosActivos": 303,
+      "sociosCancelados": 4,
+      "churnRate": 1.3,
+      "arpu": 3466.02,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-07",
+      "mrr": 924060,
+      "ingresoTotal": 1206586,
+      "sociosActivos": 343,
+      "sociosCancelados": 11,
+      "churnRate": 3.1,
+      "arpu": 3517.74,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-08",
+      "mrr": 1013010,
+      "ingresoTotal": 1305455,
+      "sociosActivos": 376,
+      "sociosCancelados": 13,
+      "churnRate": 3.3,
+      "arpu": 3471.95,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-09",
+      "mrr": 1106740,
+      "ingresoTotal": 1437897,
+      "sociosActivos": 410,
+      "sociosCancelados": 16,
+      "churnRate": 3.8,
+      "arpu": 3507.07,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-10",
+      "mrr": 1172370,
+      "ingresoTotal": 1545157,
+      "sociosActivos": 427,
+      "sociosCancelados": 26,
+      "churnRate": 5.7,
+      "arpu": 3618.63,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-11",
+      "mrr": 1110830,
+      "ingresoTotal": 1439625,
+      "sociosActivos": 394,
+      "sociosCancelados": 33,
+      "churnRate": 7.7,
+      "arpu": 3653.87,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    },
+    {
+      "mes": "2025-12",
+      "mrr": 1029060,
+      "ingresoTotal": 1339128,
+      "sociosActivos": 394,
+      "sociosCancelados": 0,
+      "churnRate": 0,
+      "arpu": 3398.8,
+      "avgAsistencias": 11,
+      "avgNps": 8
+    }
+  ],
+  "sucursalKPIs": [
+    {
+      "sucursal": "Santo Domingo (Piantini)",
+      "totalIngresos": 3651164,
+      "totalSocios": 137,
+      "avgCAC": 1765,
+      "avgARPU": 2220.9,
+      "ltv": 15990,
+      "ltvCacRatio": 9.1,
+      "ocupacionPct": 30.9,
+      "avgNps": 8
+    },
+    {
+      "sucursal": "Santiago (Los Jardines)",
+      "totalIngresos": 2946872,
+      "totalSocios": 130,
+      "avgCAC": 1545,
+      "avgARPU": 1889.02,
+      "ltv": 13601,
+      "ltvCacRatio": 8.8,
+      "ocupacionPct": 32.3,
+      "avgNps": 8
+    },
+    {
+      "sucursal": "Punta Cana (Bávaro)",
+      "totalIngresos": 2377688,
+      "totalSocios": 96,
+      "avgCAC": 1561,
+      "avgARPU": 2063.97,
+      "ltv": 14861,
+      "ltvCacRatio": 9.5,
+      "ocupacionPct": 32.4,
+      "avgNps": 8
+    },
+    {
+      "sucursal": "Santo Domingo Este (Zona Oriental)",
+      "totalIngresos": 1777898,
+      "totalSocios": 86,
+      "avgCAC": 1412,
+      "avgARPU": 1722.77,
+      "ltv": 12404,
+      "ltvCacRatio": 8.8,
+      "ocupacionPct": 24,
+      "avgNps": 8
+    },
+    {
+      "sucursal": "Puerto Plata Club",
+      "totalIngresos": 1297402,
+      "totalSocios": 51,
+      "avgCAC": 1692,
+      "avgARPU": 2119.94,
+      "ltv": 15264,
+      "ltvCacRatio": 9,
+      "ocupacionPct": 20.4,
+      "avgNps": 8
+    }
+  ],
+  "categoryKPIs": [
+    {
+      "categoria": "Personal Trainer",
+      "ingresos": 1180107,
+      "porcentaje": 9.8
+    },
+    {
+      "categoria": "Membresías",
+      "ingresos": 9267830,
+      "porcentaje": 76.9
+    },
+    {
+      "categoria": "Tienda Deportiva",
+      "ingresos": 965796,
+      "porcentaje": 8
+    },
+    {
+      "categoria": "Clases Guiadas",
+      "ingresos": 637291,
+      "porcentaje": 5.3
+    }
+  ]
+}

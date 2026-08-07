@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="background-color: #0f172a; font-family: system-ui, sans-serif; border-radius: 12px;">
+        <text x="400" y="32" fill="#f8fafc" font-size="17" font-weight="bold" text-anchor="middle">Evolución Mensual (Año 2025): Ingresos Recurrentes (RD$) y Cancelación (%)</text>
+        <line x1="60" y1="340" x2="740" y2="340" stroke="#334155" stroke-width="1.5"/>
+        <line x1="60" y1="60" x2="60" y2="340" stroke="#334155" stroke-width="1.5"/>
+        <line x1="740" y1="60" x2="740" y2="340" stroke="#334155" stroke-width="1.5"/>
+    <rect x="69.44444444444444" y="311.67138280343187" width="16" height="28.328617196568125" fill="#38bdf8" rx="2">
+            <title>2025-01: RD$ 140,640</title>
+        </rect><rect x="87.44444444444444" y="340" width="16" height="0" fill="#f43f5e" rx="2">
+            <title>2025-01: Cancelación 0%</title>
+        </rect><text x="86.44444444444444" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Ene 25</text><rect x="126.1111111111111" y="283.5139780970307" width="16" height="56.48602190296928" fill="#38bdf8" rx="2">
+            <title>2025-02: RD$ 280,430</title>
+        </rect><rect x="144.1111111111111" y="340" width="16" height="0" fill="#f43f5e" rx="2">
+            <title>2025-02: Cancelación 0%</title>
+        </rect><text x="143.1111111111111" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Feb 25</text><rect x="182.77777777777777" y="252.677601485664" width="16" height="87.32239851433599" fill="#38bdf8" rx="2">
+            <title>2025-03: RD$ 433,520</title>
+        </rect><rect x="200.77777777777777" y="340" width="16" height="0" fill="#f43f5e" rx="2">
+            <title>2025-03: Cancelación 0%</title>
+        </rect><text x="199.77777777777777" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Mar 25</text><rect x="239.44444444444446" y="226.26253564978558" width="16" height="113.73746435021442" fill="#38bdf8" rx="2">
+            <title>2025-04: RD$ 564,660</title>
+        </rect><rect x="257.44444444444446" y="314.0740740740741" width="16" height="25.925925925925924" fill="#f43f5e" rx="2">
+            <title>2025-04: Cancelación 0.9%</title>
+        </rect><text x="256.44444444444446" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Abr 25</text><rect x="296.1111111111111" y="202.22430203034273" width="16" height="137.77569796965727" fill="#38bdf8" rx="2">
+            <title>2025-05: RD$ 684,000</title>
+        </rect><rect x="314.1111111111111" y="328.47736625514403" width="16" height="11.522633744855968" fill="#f43f5e" rx="2">
+            <title>2025-05: Cancelación 0.4%</title>
+        </rect><text x="313.1111111111111" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">May 25</text><rect x="352.77777777777777" y="168.79153836220866" width="16" height="171.20846163779134" fill="#38bdf8" rx="2">
+            <title>2025-06: RD$ 849,980</title>
+        </rect><rect x="370.77777777777777" y="305.4320987654321" width="16" height="34.5679012345679" fill="#f43f5e" rx="2">
+            <title>2025-06: Cancelación 1.2%</title>
+        </rect><text x="369.77777777777777" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Jun 25</text><rect x="409.44444444444446" y="147.67801692773574" width="16" height="192.32198307226426" fill="#38bdf8" rx="2">
+            <title>2025-07: RD$ 954,800</title>
+        </rect><rect x="427.44444444444446" y="259.34156378600824" width="16" height="80.65843621399176" fill="#f43f5e" rx="2">
+            <title>2025-07: Cancelación 2.8%</title>
+        </rect><text x="426.44444444444446" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Jul 25</text><rect x="466.1111111111111" y="133.44723759797512" width="16" height="206.55276240202488" fill="#38bdf8" rx="2">
+            <title>2025-08: RD$ 1,025,450</title>
+        </rect><rect x="484.1111111111111" y="242.0576131687243" width="16" height="97.94238683127571" fill="#f43f5e" rx="2">
+            <title>2025-08: Cancelación 3.4%</title>
+        </rect><text x="483.1111111111111" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Ago 25</text><rect x="522.7777777777777" y="115.38734128224488" width="16" height="224.61265871775512" fill="#38bdf8" rx="2">
+            <title>2025-09: RD$ 1,115,110</title>
+        </rect><rect x="540.7777777777777" y="221.89300411522635" width="16" height="118.10699588477364" fill="#f43f5e" rx="2">
+            <title>2025-09: Cancelación 4.1%</title>
+        </rect><text x="539.7777777777777" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Sep 25</text><rect x="579.4444444444445" y="96.52173913043478" width="16" height="243.47826086956522" fill="#38bdf8" rx="2">
+            <title>2025-10: RD$ 1,208,770</title>
+        </rect><rect x="597.4444444444445" y="181.56378600823047" width="16" height="158.43621399176953" fill="#f43f5e" rx="2">
+            <title>2025-10: Cancelación 5.5%</title>
+        </rect><text x="596.4444444444445" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Oct 25</text><rect x="636.1111111111111" y="110.2690949585475" width="16" height="229.7309050414525" fill="#38bdf8" rx="2">
+            <title>2025-11: RD$ 1,140,520</title>
+        </rect><rect x="654.1111111111111" y="132.5925925925926" width="16" height="207.4074074074074" fill="#f43f5e" rx="2">
+            <title>2025-11: Cancelación 7.2%</title>
+        </rect><text x="653.1111111111111" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Nov 25</text><rect x="692.7777777777777" y="129.7248766352861" width="16" height="210.2751233647139" fill="#38bdf8" rx="2">
+            <title>2025-12: RD$ 1,043,930</title>
+        </rect><rect x="710.7777777777777" y="340" width="16" height="0" fill="#f43f5e" rx="2">
+            <title>2025-12: Cancelación 0%</title>
+        </rect><text x="709.7777777777777" y="360" fill="#94a3b8" font-size="11" text-anchor="middle">Dic 25</text>
+        <rect x="220" y="375" width="14" height="14" fill="#38bdf8" rx="2"/>
+        <text x="240" y="387" fill="#cbd5e1" font-size="12">Ingresos Recurrentes (RD$)</text>
+        <rect x="430" y="375" width="14" height="14" fill="#f43f5e" rx="2"/>
+        <text x="450" y="387" fill="#cbd5e1" font-size="12">Cancelación de Clientes (%)</text>
+    </svg>
